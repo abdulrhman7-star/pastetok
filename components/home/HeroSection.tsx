@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Download, Loader2, Link as LinkIcon } from 'lucide-react';
-import { fetchTikTokVideo } from '@/lib/tiktok';
+import { fetchTikTokVideo, countVideoSubmission } from '@/lib/tiktok';
 import { isValidTikTokUrl, sanitizeString } from '@/lib/security';
 import { DICT, ROUTES, type Lang } from '@/lib/i18n';
 
@@ -28,6 +28,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
       return;
     }
 
+    countVideoSubmission();
     setLoading(true);
     try {
       const result = await fetchTikTokVideo(cleanUrl);

@@ -17,7 +17,7 @@ function sections(lang: Lang): LegalSection[] {
 
   if (lang === 'en') {
     return [
-      { title: '1. Data collected', body: <p><strong>None.</strong> PasteTok is a static site with no server and no database: we do not collect, store or log any data (no IP address, no URL, no analytics, no TikTok account).</p> },
+      { title: '1. Data collected', body: <p><strong>An anonymous counter only.</strong> When a valid link is submitted, a Cloudflare Worker receives a counter name and an increment of 1, with no personal data or TikTok link in the payload. Only the cumulative submission total is stored, regardless of whether retrieval succeeds. The application does not store IP addresses or collect anything else (no URL, no TikTok account, no individual tracking).</p> },
       {
         title: '2. Third-party services',
         body: (
@@ -37,7 +37,7 @@ function sections(lang: Lang): LegalSection[] {
     ];
   }
   return [
-    { title: '1. Données collectées', body: <p><strong>Aucune.</strong> PasteTok est un site statique sans serveur ni base de données : nous ne collectons, ne stockons et ne journalisons aucune donnée (ni adresse IP, ni URL, ni statistiques, ni compte TikTok).</p> },
+    { title: '1. Données collectées', body: <p><strong>Un compteur anonyme uniquement.</strong> Lorsqu&apos;un lien valide est soumis, un Cloudflare Worker reçoit un nom de compteur et un incrément de 1, sans donnée personnelle ni lien TikTok dans le contenu envoyé. Seul le total cumulé des soumissions est conservé, même si la récupération échoue. L&apos;application ne conserve pas les adresses IP et ne collecte rien d&apos;autre (ni URL, ni compte TikTok, ni suivi individuel).</p> },
     {
       title: '2. Services tiers',
       body: (

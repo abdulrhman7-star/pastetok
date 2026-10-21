@@ -3,7 +3,7 @@
 # PasteTok
 
 **Download any public TikTok video as MP4 without watermark, with watermark, or as MP3.**
-Free · No sign-up · No ads · No cookies · No server · English & French
+Free · No sign-up · No ads · No cookies · English & French
 
 ### [▶ Try it: trk78.github.io/pastetok](https://trk78.github.io/pastetok/)
 
@@ -24,7 +24,7 @@ Free · No sign-up · No ads · No cookies · No server · English & French
 |---|---|
 | 🎬 **3 formats** | MP4 without watermark (recommended), MP4 with watermark, MP3 (audio only) |
 | 👀 **Preview** | Thumbnail, title, author, duration, likes and views before downloading |
-| 🔒 **Zero data collected** | No server, no database, no cookies, no trackers |
+| 🔒 **Anonymous counter** | Only a total submission count; no personal data, links, cookies or trackers |
 | 📱 **Mobile-first** | Built for phones, where TikTok links get copied |
 | ⚡ **Fast** | Static site served by GitHub's CDN, ~90 kB of JS on first load |
 | 🔗 **Every link format** | `tiktok.com`, `www.`, `m.`, short links `vm.` / `vt.tiktok.com` |
@@ -32,7 +32,7 @@ Free · No sign-up · No ads · No cookies · No server · English & French
 
 ## ⚙️ How it works
 
-PasteTok has **no backend**: it is a static Next.js export, and everything runs in the visitor's browser.
+PasteTok is a static Next.js export: video retrieval and downloading run in the visitor's browser. When a valid link is submitted, an anonymous Cloudflare Worker counter receives only `{nom: 'pastetok-videos', n: 1}`, with no personal data or link in the payload. Only the cumulative total is stored; nothing else is collected by the application. The request does not wait for retrieval to succeed and never blocks it; offline submissions are not queued or retried.
 
 ```mermaid
 sequenceDiagram
